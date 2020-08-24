@@ -16,7 +16,10 @@ var indexRoutes=require("./routes/index");
 
 app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/yelp_camp_v3");
+mongoose.connect("mongodb+srv://Pratt:Sanap007@cluster0.aj8jx.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+	useNewUrlParser:true,
+	useCreateIndex:true
+});
 app.set("view engine","ejs");
 // seedDB();
 
